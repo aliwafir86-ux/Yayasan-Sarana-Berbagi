@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semua Program | YASABI.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sarana-teal': '#1d8c83',
+                        'sarana-teal-hover': '#166e67',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+        .program-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center text-xl font-bold tracking-tighter">
+                YASABI<span class="text-sarana-teal text-2xl">.</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-sarana-teal transition">Home</a>
+                <a href="#" class="text-sarana-teal font-bold">Program</a>
+                <a href="tentang-kami.html" class="hover:text-sarana-teal transition">Tentang Kami</a>
+            </div>
+            <a href="#" class="bg-sarana-teal text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-sarana-teal-hover transition shadow-lg">
+                Donasi Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <header class="pt-40 pb-16 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Daftar Program Kebaikan</h1>
+            <p class="text-slate-500 text-lg max-w-2xl">Pilih saluran kebaikan yang ingin Anda alirkan hari ini untuk yatim, dhuafa, dan pejuang Al-Qur'an.</p>
+        </div>
+    </header>
+
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="group program-card bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="program1.jpg" alt="Cahaya Al-Qur'an" class="w-full h-full object-cover transition-transform duration-500">
+                        <span class="absolute top-6 left-6 bg-teal-50 text-sarana-teal text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full z-10 shadow-sm">Dakwah</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-sarana-teal transition-colors">Cahaya Al-Qur'an</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Distribusi Mushaf layak untuk pelosok negeri melalui program unggulan #BerbagiAlQuran.</p>
+                        <div class="w-12 h-1 bg-sarana-teal/20 rounded-full group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <div class="group program-card bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="program2.jpg" alt="Pangan Untuk Negeri" class="w-full h-full object-cover transition-transform duration-500">
+                        <span class="absolute top-6 left-6 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full z-10 shadow-sm">Sosial</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-sarana-teal transition-colors">Pangan Untuk Negeri</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Menyediakan paket makanan bergizi bagi yatim dan keluarga dhuafa yang membutuhkan.</p>
+                        <div class="w-12 h-1 bg-sarana-teal/20 rounded-full group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <div class="group program-card bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="program3.jpg" alt="Sumber Kehidupan" class="w-full h-full object-cover transition-transform duration-500">
+                        <span class="absolute top-6 left-6 bg-cyan-50 text-cyan-600 text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full z-10 shadow-sm">Sanitasi</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-sarana-teal transition-colors">Sumber Kehidupan</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Pembangunan sumur wakaf dan sarana air bersih untuk kesehatan masyarakat pelosok.</p>
+                        <div class="w-12 h-1 bg-sarana-teal/20 rounded-full group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-slate-100 text-center bg-white mt-20">
+        <div class="text-xl font-bold mb-4">YASABI<span class="text-sarana-teal">.</span></div>
+        <p class="text-xs text-slate-400 uppercase tracking-widest">&copy; 2026 Yayasan Sarana Berbagi. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
