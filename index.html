@@ -25,7 +25,6 @@
             backdrop-filter: blur(15px);
         }
         
-        /* Frame Blur Modifikasi */
         .blur-container {
             position: relative;
             overflow: hidden;
@@ -35,14 +34,13 @@
         .blur-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(29, 140, 131, 0); /* Transparan di awal */
-            backdrop-filter: blur(0px); /* Tanpa blur di awal */
+            background: rgba(29, 140, 131, 0); 
+            backdrop-filter: blur(0px); 
             -webkit-backdrop-filter: blur(0px);
             transition: all 0.5s ease;
             z-index: 10;
         }
 
-        /* Efek Blur muncul hanya saat Hover */
         .program-card:hover .blur-overlay {
             background: rgba(29, 140, 131, 0.1);
             backdrop-filter: blur(8px);
@@ -63,7 +61,7 @@
 
     <nav class="fixed w-full z-50 glass-nav border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2 text-xl font-bold tracking-tighter">
+            <div class="flex items-center text-xl font-bold tracking-tighter">
                 YASABI<span class="text-sarana-teal text-2xl">.</span>
             </div>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
