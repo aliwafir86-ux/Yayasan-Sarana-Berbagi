@@ -25,7 +25,7 @@
             backdrop-filter: blur(15px);
         }
         
-        /* Frame Blur ala Mulung Amal */
+        /* Frame Blur Modifikasi */
         .blur-container {
             position: relative;
             overflow: hidden;
@@ -34,20 +34,19 @@
 
         .blur-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 40%;
-            background: linear-gradient(to top, rgba(29, 140, 131, 0.2), transparent);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            inset: 0;
+            background: rgba(29, 140, 131, 0); /* Transparan di awal */
+            backdrop-filter: blur(0px); /* Tanpa blur di awal */
+            -webkit-backdrop-filter: blur(0px);
             transition: all 0.5s ease;
+            z-index: 10;
         }
 
+        /* Efek Blur muncul hanya saat Hover */
         .program-card:hover .blur-overlay {
-            height: 100%;
             background: rgba(29, 140, 131, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .program-card {
@@ -82,7 +81,7 @@
         <div class="max-w-5xl mx-auto text-center">
             <span class="inline-block py-1 px-4 rounded-full bg-white text-sarana-teal text-[10px] font-bold mb-8 tracking-[0.2em] uppercase shadow-sm border border-teal-50">Dedikasi Sejak 2016</span>
             <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
-                Mengalirkan Kebaikan, <br> <span class="text-sarana-teal font-light italic">Melampaui Batas.</span>
+                Semangat Menebar <br> <span class="text-sarana-teal font-light italic">Manfaat.</span>
             </h1>
             <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
                 Menjembatani kepedulian Anda untuk yatim, dhuafa, dan pejuang Al-Qur'an melalui aksi nyata yang transparan.
