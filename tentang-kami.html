@@ -1,74 +1,135 @@
-<section class="pt-40 pb-20 px-6 bg-white">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="text-sarana-teal font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Mengenal Lebih Dekat</span>
-                <h2 class="text-5xl font-bold leading-tight mb-8">Bersama Membangun <br><span class="text-sarana-teal italic font-light">Masa Depan Umat.</span></h2>
-                <p class="text-slate-500 leading-relaxed mb-6">
-                    Yayasan Sarana Berbagi (YASABI) lahir dari semangat kepedulian untuk menjadi jembatan kebaikan yang transparan dan profesional. Sejak 2016, kami berkomitmen mengelola amanah donatur untuk memberikan dampak nyata bagi yang membutuhkan.
-                </p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | YASABI.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sarana-teal': '#1d8c83',
+                        'sarana-teal-hover': '#166e67',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center text-xl font-bold tracking-tighter cursor-pointer">
+                YASABI<span class="text-sarana-teal text-2xl">.</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-sarana-teal transition">Home</a>
+                <a href="index.html#program" class="hover:text-sarana-teal transition">Program</a>
+                <a href="#" class="text-sarana-teal font-bold">Tentang Kami</a>
             </div>
-            <div class="blur-container shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1524069290683-0457abfe42c3?auto=format&fit=crop&w=800" class="w-full h-[400px] object-cover">
-                <div class="blur-overlay"></div>
+            <a href="#" class="bg-sarana-teal text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-sarana-teal-hover transition shadow-lg">
+                Donasi Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 px-6 bg-slate-50/50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Profil Yayasan</h1>
+            <div class="space-y-6 text-lg text-slate-600 leading-relaxed text-justify md:text-center">
+                <p>
+                    <span class="font-bold text-sarana-teal">Yayasan Sarana Berbagi</span> adalah lembaga non profit pada bidang sosial dan keagamaan yang mengelola dana infak, sedekah dan dana kemanusiaan, CSR dan dana sosial lainnya.
+                </p>
+                <p>
+                    Dana tersebut dikelola menjadi sebuah sarana untuk membantu memandirikan dan memberdayakan masyarakat yang kurang beruntung dalam berbagai program produktif, seperti program pemberdayaan ekonomi, kesehatan, lingkungan, pendidikan, dan kebencanaan.
+                </p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="py-24 px-6 bg-slate-50">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-12 rounded-[3rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500 group">
-                <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-sarana-teal transition-colors duration-500">
-                    <span class="text-2xl group-hover:scale-125 transition-transform">🎯</span>
-                </div>
-                <h3 class="text-3xl font-bold mb-6">Visi Kami</h3>
-                <p class="text-slate-500 leading-relaxed text-lg">
-                    Menjadi lembaga filantropi terdepan yang menginspirasi perubahan sosial melalui pemberdayaan umat yang berkelanjutan dan transparan.
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div class="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm">
+                <h2 class="text-sarana-teal font-bold text-xs uppercase tracking-[0.3em] mb-4">Visi</h2>
+                <p class="text-2xl font-bold text-slate-800 leading-snug">
+                    Menjadi lembaga sosial dan kemanusiaan yang profesional dan memberdayakan.
                 </p>
             </div>
-
-            <div class="bg-white p-12 rounded-[3rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500 group">
-                <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-sarana-teal transition-colors duration-500">
-                    <span class="text-2xl group-hover:scale-125 transition-transform">🚀</span>
-                </div>
-                <h3 class="text-3xl font-bold mb-6">Misi Kami</h3>
-                <ul class="text-slate-500 space-y-4 text-lg">
-                    <li class="flex items-start gap-3">
-                        <span class="text-sarana-teal font-bold">•</span> Mengelola dana ZISWAF secara profesional dan akuntabel.
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-sarana-teal font-bold">•</span> Menciptakan program inovatif yang berdampak langsung pada kemandirian ekonomi.
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-sarana-teal font-bold">•</span> Memfasilitasi akses pendidikan dan kesehatan bagi yatim serta dhuafa.
-                    </li>
+            <div class="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm">
+                <h2 class="text-sarana-teal font-bold text-xs uppercase tracking-[0.3em] mb-4">Misi</h2>
+                <ul class="space-y-4 text-slate-600">
+                    <li class="flex gap-3"><span class="text-sarana-teal">✓</span> Menggalang kepedulian masyarakat melalui kerja ikhlas, kerja cerdas dan kerja tuntas.</li>
+                    <li class="flex gap-3"><span class="text-sarana-teal">✓</span> Mengaktualisasikan pemberdayaan masyarakat menjadi mandiri dan produktif dengan mensinergikan program pemberdayaan ekonomi, pendidikan, kesehatan, lingkungan dan kebencanaan.</li>
                 </ul>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="py-24 px-6 bg-white text-center">
-    <div class="max-w-3xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8">Kenapa Memilih Kami?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-10">
-            <div>
-                <div class="text-sarana-teal text-4xl mb-4">🛡️</div>
-                <h4 class="font-bold mb-2">Legal & Resmi</h4>
-                <p class="text-xs text-slate-400 uppercase tracking-widest">Terdaftar di Kemenkumham</p>
+    <section class="py-20 px-6 bg-slate-950 text-white rounded-[4rem] mx-4 my-10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Legalitas Yayasan</h2>
+                <p class="text-slate-400">Komitmen kami pada transparansi dan hukum yang berlaku.</p>
             </div>
-            <div>
-                <div class="text-sarana-teal text-4xl mb-4">📊</div>
-                <h4 class="font-bold mb-2">100% Transparan</h4>
-                <p class="text-xs text-slate-400 uppercase tracking-widest">Laporan Berkala</p>
-            </div>
-            <div>
-                <div class="text-sarana-teal text-4xl mb-4">🤝</div>
-                <h4 class="font-bold mb-2">Amanah</h4>
-                <p class="text-xs text-slate-400 uppercase tracking-widest">Penyaluran Tepat Sasaran</p>
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-8">
+                <div class="border-b border-slate-800 pb-4">
+                    <p class="text-xs text-sarana-teal font-bold uppercase tracking-widest mb-1">NPWP</p>
+                    <p class="text-lg">766302.4444.000</p>
+                </div>
+                <div class="border-b border-slate-800 pb-4">
+                    <p class="text-xs text-sarana-teal font-bold uppercase tracking-widest mb-1">Notaris</p>
+                    <p class="text-lg leading-snug">Rima Nurwidiasih, S.H., M.Kn. No. 85 (8 Maret 2021)</p>
+                </div>
+                <div class="border-b border-slate-800 pb-4">
+                    <p class="text-xs text-sarana-teal font-bold uppercase tracking-widest mb-1">SK. KEMENKUMHAM</p>
+                    <p class="text-lg">Nomor AHU-0000643.AH.01.05 (Tahun 2016)</p>
+                </div>
+                <div class="border-b border-slate-800 pb-4">
+                    <p class="text-xs text-sarana-teal font-bold uppercase tracking-widest mb-1">Perubahan Anggaran Dasar</p>
+                    <p class="text-lg leading-snug">Rima Nurwidiasih, S.H., M.Kn. No. 05 (23 Agustus 2016)</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16 underline decoration-sarana-teal decoration-4 underline-offset-8">Alamat Kami</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
+                    <div class="text-sarana-teal mb-4 text-3xl">🏢</div>
+                    <h3 class="text-xl font-bold mb-3">Alamat Kantor</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Jl. Merkuri Tengah No.24 Komplek Margahayu Raya, RT 08/ RW 08, Kel. Manjahlega, Kec. Rancasari, Kota Bandung, Jawa Barat 40286, Indonesia
+                    </p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
+                    <div class="text-sarana-teal mb-4 text-3xl">🏠</div>
+                    <h3 class="text-xl font-bold mb-3">Alamat Rumah Tahfidz Annaba</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Komplek Griya Bandung Indah, Blok F14, No.2, Buahbatu, Kec. Bojongsoang, Kota Bandung, Jawa Barat 40287, Indonesia
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-slate-100 text-center">
+        <div class="text-xl font-bold mb-4">YASABI<span class="text-sarana-teal">.</span></div>
+        <p class="text-xs text-slate-400 uppercase tracking-widest tracking-widest">&copy; 2026 Yayasan Sarana Berbagi. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
