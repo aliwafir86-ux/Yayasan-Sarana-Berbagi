@@ -20,10 +20,36 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Gaya Navigasi Transparan (Glassmorphism) */
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
+        }
+
+        /* Gaya Khusus Area Hero dengan Latar Gambar (Sesuai Permintaan) */
+        .about-hero-bg {
+            /* Ganti URL di bawah ini dengan link gambar kegiatan nyata Yayasan kamu */
+            background-image: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1600'); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Lapisan Teal Transparan di Atas Gambar (Overlay) */
+        .about-hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(29, 140, 131, 0.85); /* Warna Teal Yayasan, Transparansi 85% */
+            z-index: 1;
+        }
+
+        /* Memastikan Teks Berada di Atas Lapisan Teal */
+        .about-hero-content {
+            position: relative;
+            z-index: 10;
         }
     </style>
 </head>
@@ -45,21 +71,29 @@
         </div>
     </nav>
 
-    <section class="pt-40 pb-20 px-6 bg-slate-50/50">
+    <section class="about-hero-bg pt-52 pb-32 px-6 text-white rounded-b-[4rem]">
+        <div class="max-w-4xl mx-auto text-center about-hero-content">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">Tentang Kami</h1>
+            <p class="text-xl text-teal-50 max-w-2xl mx-auto leading-relaxed">
+                Mengenal lebih dekat dedikasi dan komitmen Yayasan Sarana Berbagi dalam menebar manfaat bagi sesama.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white">
         <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Profil Yayasan</h1>
             <div class="space-y-6 text-lg text-slate-600 leading-relaxed text-justify md:text-center">
                 <p>
-                    <span class="font-bold text-sarana-teal">Yayasan Sarana Berbagi</span> adalah lembaga non profit pada bidang sosial dan keagamaan yang mengelola dana infak, sedekah dan dana kemanusiaan, CSR dan dana sosial lainnya.
+                    <span class="font-bold text-sarana-teal text-xl">Yayasan Sarana Berbagi (YASABI)</span> adalah lembaga non profit pada bidang sosial dan keagamaan yang mengelola dana infak, sedekah dan dana kemanusiaan, CSR dan dana sosial lainnya.
                 </p>
                 <p>
-                    Dana tersebut dikelola menjadi sebuah sarana untuk membantu memandirikan dan memberdayakan masyarakat yang kurang beruntung dalam berbagai program produktif, seperti program pemberdayaan ekonomi, kesehatan, lingkungan, pendidikan, dan kebencanaan.
+                    Dana tersebut dikelola menjadi sebuah sarana untuk membantu memandirikan dan memberdayakan masyarakat yang kurang beruntung dalam berbagai program produktif, seperti program pemberdayaan ekonomi, kesehatan, lingkungan, pendidikan, dan kebencanaan. Dedikasi ini telah kami emban sejak berdiri pada tahun <span class="font-semibold text-slate-800">2016</span>.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-6">
+    <section class="py-20 px-6 bg-slate-50/50">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
             <div class="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm">
                 <h2 class="text-sarana-teal font-bold text-xs uppercase tracking-[0.3em] mb-4">Visi</h2>
@@ -70,8 +104,8 @@
             <div class="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm">
                 <h2 class="text-sarana-teal font-bold text-xs uppercase tracking-[0.3em] mb-4">Misi</h2>
                 <ul class="space-y-4 text-slate-600">
-                    <li class="flex gap-3"><span class="text-sarana-teal">✓</span> Menggalang kepedulian masyarakat melalui kerja ikhlas, kerja cerdas dan kerja tuntas.</li>
-                    <li class="flex gap-3"><span class="text-sarana-teal">✓</span> Mengaktualisasikan pemberdayaan masyarakat menjadi mandiri dan produktif dengan mensinergikan program pemberdayaan ekonomi, pendidikan, kesehatan, lingkungan dan kebencanaan.</li>
+                    <li class="flex gap-3"><span class="text-sarana-teal font-bold">✓</span> Menggalang kepedulian masyarakat melalui kerja ikhlas, kerja cerdas dan kerja tuntas.</li>
+                    <li class="flex gap-3"><span class="text-sarana-teal font-bold">✓</span> Mengaktualisasikan pemberdayaan masyarakat menjadi mandiri dan produktif dengan mensinergikan program pemberdayaan ekonomi, pendidikan, kesehatan, lingkungan dan kebencanaan.</li>
                 </ul>
             </div>
         </div>
@@ -107,7 +141,7 @@
         </div>
     </section>
 
-    <section class="py-20 px-6">
+    <section class="py-20 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-16 underline decoration-sarana-teal decoration-4 underline-offset-8">Alamat Kami</h2>
             <div class="grid md:grid-cols-2 gap-8">
@@ -129,7 +163,7 @@
         </div>
     </section>
 
-    <footer class="py-12 px-6 border-t border-slate-100 text-center">
+    <footer class="py-12 px-6 border-t border-slate-100 text-center bg-white">
         <div class="text-xl font-bold mb-4">YASABI<span class="text-sarana-teal">.</span></div>
         <p class="text-xs text-slate-400 uppercase tracking-widest">&copy; 2026 Yayasan Sarana Berbagi. All Rights Reserved.</p>
     </footer>
