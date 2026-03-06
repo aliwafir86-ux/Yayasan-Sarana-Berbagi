@@ -30,10 +30,10 @@
 
         /* Gaya Khusus Area Hero dengan Latar Gambar (Sesuai Permintaan) */
         .about-hero-bg {
-            /* Ganti URL di bawah ini dengan link gambar kegiatan nyata Yayasan kamu */
             background-image: url('Tentangkami.png'); 
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             position: relative;
         }
 
@@ -42,7 +42,8 @@
             content: '';
             position: absolute;
             inset: 0;
-            background-color: rgba(29, 140, 131, 0.85); /* Warna Teal Yayasan, Transparansi 85% */
+            /* Warna Teal Yayasan dengan transparansi 85% untuk efek profesional */
+            background-color: rgba(29, 140, 131, 0.85); 
             z-index: 1;
         }
 
