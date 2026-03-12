@@ -88,6 +88,11 @@
             border-style: solid;
             border-color: #1f2937 transparent transparent transparent;
         }
+
+        /* Animasi Hamburger */
+        #menu-btn.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        #menu-btn.open span:nth-child(2) { opacity: 0; }
+        #menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); width: 1.5rem; }
     </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
@@ -97,14 +102,31 @@
             <div class="flex items-center cursor-pointer">
                 <img src="Logo1.png" alt="Logo YASABI" class="h-10 w-auto">
             </div>
+
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
                 <a href="#" class="hover:text-sarana-teal transition">Home</a>
                 <a href="#program" class="hover:text-sarana-teal transition">Program</a>
                 <a href="tentang-kami.html" class="hover:text-sarana-teal transition">Tentang Kami</a>
             </div>
-            <a href="#" class="bg-sarana-teal text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-sarana-teal-hover transition shadow-lg shadow-teal-100">
-                Donasi Sekarang
-            </a>
+
+            <div class="hidden md:block">
+                <a href="#" class="bg-sarana-teal text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-sarana-teal-hover transition shadow-lg shadow-teal-100">
+                    Donasi Sekarang
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden flex flex-col justify-center items-end w-8 h-8 space-y-1.5 focus:outline-none z-[60]">
+                <span class="block w-8 h-0.5 bg-slate-800 transition-all duration-300"></span>
+                <span class="block w-8 h-0.5 bg-slate-800 transition-all duration-300"></span>
+                <span class="block w-5 h-0.5 bg-slate-800 transition-all duration-300"></span>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-500 md:hidden">
+            <a href="#" class="mobile-link text-2xl font-bold text-slate-800 hover:text-sarana-teal transition">Home</a>
+            <a href="#program" class="mobile-link text-2xl font-bold text-slate-800 hover:text-sarana-teal transition">Program</a>
+            <a href="tentang-kami.html" class="mobile-link text-2xl font-bold text-slate-800 hover:text-sarana-teal transition">Tentang Kami</a>
+            <a href="#" class="bg-sarana-teal text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl shadow-teal-100">Donasi Sekarang</a>
         </div>
     </nav>
 
@@ -361,5 +383,33 @@
             </div>
         </a>
     </div>
-    </body>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            menuBtn.classList.toggle('open');
+            const isOpen = menuBtn.classList.contains('open');
+            
+            if (isOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = 'hidden'; // Stop scroll
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = ''; // Resume scroll
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Tutup menu jika link diklik
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
 </html>
