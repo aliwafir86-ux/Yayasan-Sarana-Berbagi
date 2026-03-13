@@ -400,48 +400,51 @@
     </div>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    // Memastikan script berjalan setelah semua elemen HTML termuat
+    window.addEventListener("load", function() {
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
         const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
+        // Fungsi buka/tutup menu
         function toggleMenu() {
-            if (!menuBtn || !mobileMenu) return; // Mencegah error jika elemen belum terbaca
+            if (!mobileMenu || !menuBtn) return;
             
-            menuBtn.classList.toggle('open');
-            const isOpen = menuBtn.classList.contains('open');
+            const isOpen = menuBtn.classList.toggle('open');
             
             if (isOpen) {
-                // Tampilkan menu
+                // Munculkan Popup
                 mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
                 mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-x-0');
-                document.body.style.overflow = 'hidden'; // Kunci scroll layar belakang
+                document.body.style.overflow = 'hidden'; // Kunci scroll agar tidak goyang
             } else {
-                // Sembunyikan menu
+                // Sembunyikan Popup
                 mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
                 mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-x-0');
-                document.body.style.overflow = ''; // Buka kunci scroll
+                document.body.style.overflow = ''; 
             }
         }
 
+        // Listener Klik Tombol Hamburger
         if (menuBtn) {
-            menuBtn.addEventListener('click', toggleMenu);
-        }
-        
-        if (closeMenuBtn) {
-            closeMenuBtn.addEventListener('click', () => {
-                if (menuBtn.classList.contains('open')) toggleMenu();
-            });
+            menuBtn.onclick = function(e) {
+                e.preventDefault();
+                toggleMenu();
+            };
         }
 
-        if (mobileLinks.length > 0) {
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (menuBtn.classList.contains('open')) toggleMenu();
-                });
-            });
+        // Listener Klik Tombol Close di dalam Popup
+        if (closeMenuBtn) {
+            closeMenuBtn.onclick = toggleMenu;
         }
+
+        // Listener Klik pada Link (agar menu tutup saat navigasi diklik)
+        mobileLinks.forEach(link => {
+            link.onclick = function() {
+                if (menuBtn.classList.contains('open')) toggleMenu();
+            };
+        });
     });
 </script>
 </body>
