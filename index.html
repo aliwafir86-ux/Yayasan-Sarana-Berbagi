@@ -43,11 +43,25 @@
             background-attachment: fixed;
         }
 
-        /* Frame Blur Interaktif */
+        /* Frame Blur Interaktif & Gaya Luwes */
         .blur-container {
             position: relative;
             overflow: hidden;
             border-radius: 2rem;
+            transition: all 0.5s ease;
+        }
+
+        /* EFEK BARU: Bingkai Foto Luwes (Polaroid Style) */
+        .photo-frame {
+            background: white;
+            padding: 12px 12px 40px 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transform: rotate(-2deg); /* Membuat kesan tidak kaku */
+            transition: all 0.4s ease;
+        }
+
+        .program-card:hover .photo-frame {
+            transform: rotate(0deg) scale(1.02);
         }
 
         .blur-overlay {
@@ -63,8 +77,8 @@
         .program-card:hover .blur-overlay, 
         .about-image-wrapper:hover .blur-overlay {
             background: rgba(29, 140, 131, 0.1);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
 
         .program-card {
@@ -293,10 +307,12 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-12">
-                <div class="reveal program-card group cursor-pointer bg-white p-5 rounded-[3rem] shadow-sm border border-slate-100">
-                    <div class="blur-container aspect-[16/11] mb-8 shadow-inner">
-                        <img src="https://images.unsplash.com/photo-1627376037701-d0b8f04122e2?&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="blur-overlay"></div>
+                <div class="reveal program-card group cursor-pointer bg-transparent p-2 rounded-[3rem]">
+                    <div class="photo-frame mb-8">
+                        <div class="blur-container aspect-[16/11]">
+                            <img src="https://images.unsplash.com/photo-1627376037701-d0b8f04122e2?&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="blur-overlay"></div>
+                        </div>
                     </div>
                     <div class="px-3 pb-4">
                         <span class="text-[10px] font-bold text-sarana-teal bg-teal-50 px-4 py-1.5 rounded-full mb-4 inline-block uppercase tracking-widest">Dakwah</span>
@@ -306,10 +322,11 @@
                     </div>
                 </div>
 
-                <div class="reveal program-card group cursor-pointer bg-white p-5 rounded-[3rem] shadow-sm border border-slate-100" style="transition-delay: 150ms;">
-                    <div class="blur-container aspect-[16/11] mb-8 shadow-inner">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="blur-overlay"></div>
+                <div class="reveal program-card group cursor-pointer bg-transparent p-2 rounded-[3rem]" style="transition-delay: 150ms;">
+                    <div class="photo-frame mb-8" style="transform: rotate(2deg);"> <div class="blur-container aspect-[16/11]">
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="blur-overlay"></div>
+                        </div>
                     </div>
                     <div class="px-3 pb-4">
                         <span class="text-[10px] font-bold text-sarana-teal bg-teal-50 px-4 py-1.5 rounded-full mb-4 inline-block uppercase tracking-widest">Sosial</span>
@@ -319,10 +336,12 @@
                     </div>
                 </div>
 
-                <div class="reveal program-card group cursor-pointer bg-white p-5 rounded-[3rem] shadow-sm border border-slate-100" style="transition-delay: 300ms;">
-                    <div class="blur-container aspect-[16/11] mb-8 shadow-inner">
-                        <img src="https://images.unsplash.com/photo-1541544537156-7627a7a4aa1c?&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="blur-overlay"></div>
+                <div class="reveal program-card group cursor-pointer bg-transparent p-2 rounded-[3rem]" style="transition-delay: 300ms;">
+                    <div class="photo-frame mb-8">
+                        <div class="blur-container aspect-[16/11]">
+                            <img src="https://images.unsplash.com/photo-1541544537156-7627a7a4aa1c?&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="blur-overlay"></div>
+                        </div>
                     </div>
                     <div class="px-3 pb-4">
                         <span class="text-[10px] font-bold text-sarana-teal bg-teal-50 px-4 py-1.5 rounded-full mb-4 inline-block uppercase tracking-widest">Sanitasi</span>
