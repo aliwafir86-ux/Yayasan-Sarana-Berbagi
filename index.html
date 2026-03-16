@@ -131,36 +131,38 @@
             transform: translateY(0);
         }
 
-        /* --- FITUR TAMBAHAN: PETA INTERAKTIF --- */
+        /* --- STYLING PETA INTERAKTIF --- */
         .map-container svg {
             width: 100%;
             height: auto;
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
         }
         .region {
             fill: #e2e8f0;
             stroke: #fff;
-            stroke-width: 1;
+            stroke-width: 1.5;
             transition: all 0.3s ease;
             cursor: pointer;
         }
         .region:hover {
             fill: #1d8c83;
-            transform: translateY(-5px);
-            filter: drop-shadow(0 10px 8px rgba(29, 140, 131, 0.2));
+            transform: scale(1.02);
+            filter: drop-shadow(0 10px 15px rgba(29, 140, 131, 0.3));
         }
         .map-tooltip {
             position: fixed;
-            padding: 8px 12px;
+            padding: 8px 14px;
             background: #1f2937;
             color: white;
-            border-radius: 8px;
-            font-size: 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.2s;
             z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -282,17 +284,18 @@
             <h2 class="text-3xl font-bold mb-4">Jangkauan Kebaikan</h2>
             <p class="text-slate-500 mb-12">YASABI hadir di berbagai penjuru Indonesia untuk menebar manfaat.</p>
             
-            <div class="map-container relative">
-    <div id="map-tooltip" class="map-tooltip">Provinsi</div>
-    <svg viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-2xl">
-        <path class="region" data-name="Sumatera" d="M120,100 C140,110 170,140 190,180 C200,210 180,250 160,280 C140,290 120,270 100,240 C80,210 70,150 90,110 Z" />
-        <path class="region" data-name="Jawa" d="M250,320 C300,315 350,315 400,325 C450,335 450,350 400,355 C350,360 300,355 250,350 C230,345 230,325 250,320 Z" />
-        <path class="region" data-name="Kalimantan" d="M330,130 C380,110 450,110 480,140 C500,170 490,220 450,250 C400,260 350,250 320,220 C300,180 300,150 330,130 Z" />
-        <path class="region" data-name="Sulawesi" d="M530,140 C560,130 590,140 590,160 C590,180 560,180 550,190 C570,200 600,220 590,250 C570,260 550,240 540,220 C530,240 510,250 490,240 C480,220 510,200 520,180 Z" />
-        <path class="region" data-name="Papua" d="M780,190 C830,180 900,185 920,210 C930,240 910,280 870,295 C820,305 760,295 740,260 C730,230 750,200 780,190 Z" />
-        <path class="region" data-name="Nusa Tenggara & Bali" d="M470,335 C500,335 550,345 620,355 L620,365 C550,355 500,345 470,345 Z" />
-    </svg>
-</div>
+            <div class="map-container relative flex justify-center">
+                <div id="map-tooltip" class="map-tooltip">Provinsi</div>
+                <svg viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-2xl">
+                    <path class="region" data-name="Sumatera" d="M120,80 C110,90 140,130 160,160 C180,190 200,240 180,270 C160,300 130,280 110,250 C90,220 70,160 85,110 C90,95 110,80 120,80 Z" />
+                    <path class="region" data-name="Jawa" d="M250,330 C280,325 350,325 420,335 C450,340 450,355 420,360 C350,370 280,365 250,360 C230,355 230,335 250,330 Z" />
+                    <path class="region" data-name="Kalimantan" d="M350,130 C380,115 450,115 480,135 C500,150 500,190 480,220 C460,240 430,255 380,250 C330,240 310,210 320,170 C330,145 340,135 350,130 Z" />
+                    <path class="region" data-name="Sulawesi" d="M540,140 C570,130 600,140 595,165 C590,185 550,185 540,195 C555,205 610,215 600,255 C580,270 550,250 540,225 C530,245 500,265 485,245 C475,220 515,200 525,185 C515,165 520,145 540,140 Z" />
+                    <path class="region" data-name="Papua" d="M780,195 C820,185 900,190 925,220 C940,250 910,300 870,305 C820,310 760,305 745,265 C735,235 750,205 780,195 Z" />
+                    <path class="region" data-name="Bali & Nusa Tenggara" d="M460,345 C480,345 520,350 560,360 L650,375 L650,385 C560,370 480,355 460,355 Z" />
+                    <path class="region" data-name="Maluku" d="M630,170 C650,160 680,170 680,195 C680,220 650,230 630,220 Z" />
+                </svg>
+            </div>
             <p class="mt-8 text-xs text-slate-400 italic">*Arahkan kursor ke wilayah peta</p>
         </div>
     </section>
@@ -459,6 +462,7 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
+        // Logika Tooltip Peta
         const mapTooltip = document.getElementById('map-tooltip');
         const regions = document.querySelectorAll('.region');
 
@@ -469,7 +473,6 @@
             
             region.addEventListener('mousemove', (e) => {
                 mapTooltip.innerText = region.getAttribute('data-name');
-                // Mengatur posisi tooltip agar mengikuti kursor dengan offset
                 mapTooltip.style.left = (e.clientX + 15) + 'px';
                 mapTooltip.style.top = (e.clientY + 15) + 'px';
             });
@@ -492,7 +495,7 @@
             }
         };
         window.addEventListener("scroll", revealOnScroll);
-        revealOnScroll(); // Jalankan sekali saat load
+        revealOnScroll();
 
         // Script Mobile Menu
         const menuBtn = document.getElementById('menu-btn');
@@ -523,6 +526,6 @@
             });
         }
     });
-</script>
+    </script>
 </body>
 </html>
