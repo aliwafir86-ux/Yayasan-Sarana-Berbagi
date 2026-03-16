@@ -9,11 +9,16 @@
     <meta property="og:image" content="Logo3.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        // UPDATE: Set default font ke Montserrat
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
                     colors: {
                         'sarana-teal': '#1d8c83',
                         'sarana-teal-hover': '#166e67',
@@ -25,7 +30,8 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; }
+        /* UPDATE: Font family body menggunakan Montserrat */
+        body { font-family: 'Montserrat', sans-serif; }
         
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
