@@ -29,6 +29,16 @@
             -webkit-backdrop-filter: blur(15px);
         }
         
+        /* FITUR BARU: Background Header Home */
+        .home-hero-bg {
+            background-color: #f8fafc; /* Slate-50 dasar */
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(29, 140, 131, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(29, 140, 131, 0.03) 0px, transparent 50%),
+                url('https://www.transparenttextures.com/patterns/clean-gray-paper.png'); /* Pola tekstur halus */
+            background-attachment: fixed;
+        }
+
         /* Frame Blur Interaktif */
         .blur-container {
             position: relative;
@@ -153,7 +163,7 @@
 </div>
     </nav>
 
-    <section class="pt-48 pb-24 px-6 bg-gradient-to-b from-teal-50/50 to-white text-center">
+    <section class="pt-48 pb-24 px-6 home-hero-bg text-center border-b border-slate-50">
         <div class="max-w-5xl mx-auto reveal">
             <span class="inline-block py-1 px-4 rounded-full bg-white text-sarana-teal text-[10px] font-bold mb-8 tracking-[0.2em] uppercase shadow-sm border border-teal-50">Dedikasi Sejak 2016</span>
             <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
