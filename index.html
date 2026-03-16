@@ -33,14 +33,16 @@
             -webkit-backdrop-filter: blur(15px);
         }
         
-        /* FITUR BARU: Background Header Home */
+        /* FITUR BARU: Background Header Home dengan Foto image1.png */
         .home-hero-bg {
-            background-color: #f8fafc; /* Slate-50 dasar */
+            background-color: #f8fafc;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(29, 140, 131, 0.05) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(29, 140, 131, 0.03) 0px, transparent 50%),
-                url('https://www.transparenttextures.com/patterns/clean-gray-paper.png'); /* Pola tekstur halus */
+                linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
+                url('image1.png');
+            background-size: cover;
+            background-position: center;
             background-attachment: fixed;
+            background-repeat: no-repeat;
         }
 
         /* Frame Blur Interaktif */
