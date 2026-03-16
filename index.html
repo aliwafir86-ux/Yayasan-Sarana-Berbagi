@@ -193,24 +193,24 @@
 
        <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex flex-col items-start p-8 space-y-8 opacity-0 pointer-events-none translate-x-full transition-all duration-500 md:hidden overflow-y-auto">
     
-    <div class="w-full flex justify-between items-center mt-16 mb-4">
-        <span class="text-sarana-teal font-bold uppercase tracking-widest text-sm">Menu Navigasi</span>
-        <button id="close-menu-btn" class="text-slate-500 focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-    </div>
+            <div class="w-full flex justify-between items-center mt-16 mb-4">
+                <span class="text-sarana-teal font-bold uppercase tracking-widest text-sm">Menu Navigasi</span>
+                <button id="close-menu-btn" class="text-slate-500 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
 
-    <a href="#" class="mobile-link text-2xl font-bold text-slate-800 hover:text-sarana-teal transition">Home</a>
-    <a href="#program" class="mobile-link text-2xl font-bold text-slate-800 hover:text-sarana-teal transition">Program</a>
-    <a href="tentang-kami.html" class="mobile-link text-2xl font-bold text-slate-800 hover:text-sarana-teal transition">Tentang Kami</a>
-    
-    <div class="mt-auto w-full pt-8 border-t border-slate-100 pb-8">
-        <a href="#" class="w-full block text-center bg-sarana-teal text-white px-8 py-4 rounded-2xl text-lg font-semibold shadow-xl shadow-teal-100 mb-6">Donasi Sekarang</a>
-        <a href="https://api.whatsapp.com/send?phone=6281809531647" class="flex items-center justify-center text-whatsapp-green font-bold uppercase tracking-wider text-sm">
-            Hubungi Kami
-        </a>
-    </div>
-</div>
+            <a href="#" class="mobile-link text-2xl font-bold text-slate-800 hover:text-sarana-teal transition">Home</a>
+            <a href="#program" class="mobile-link text-2xl font-bold text-slate-800 hover:text-sarana-teal transition">Program</a>
+            <a href="tentang-kami.html" class="mobile-link text-2xl font-bold text-slate-800 hover:text-sarana-teal transition">Tentang Kami</a>
+            
+            <div class="mt-auto w-full pt-8 border-t border-slate-100 pb-8">
+                <a href="#" class="w-full block text-center bg-sarana-teal text-white px-8 py-4 rounded-2xl text-lg font-semibold shadow-xl shadow-teal-100 mb-6">Donasi Sekarang</a>
+                <a href="https://api.whatsapp.com/send?phone=6281809531647" class="flex items-center justify-center text-whatsapp-green font-bold uppercase tracking-wider text-sm">
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
     </nav>
 
     <section class="pt-48 pb-24 px-6 home-hero-bg text-center border-b border-slate-50">
@@ -282,14 +282,16 @@
             <h2 class="text-3xl font-bold mb-4">Jangkauan Kebaikan</h2>
             <p class="text-slate-500 mb-12">YASABI hadir di berbagai penjuru Indonesia untuk menebar manfaat.</p>
             
-            <div class="map-container relative">
+            <div class="map-container relative flex justify-center">
                 <div id="map-tooltip" class="map-tooltip">Provinsi</div>
-                <svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
-                    <path class="region" data-name="Sumatera" d="M100,80 L180,180 L140,220 L60,120 Z" />
-                    <path class="region" data-name="Jawa" d="M220,260 L380,260 L380,285 L220,285 Z" />
-                    <path class="region" data-name="Kalimantan" d="M280,100 L400,100 L420,180 L260,180 Z" />
-                    <path class="region" data-name="Sulawesi" d="M450,110 L520,110 L520,210 L450,210 L480,160 Z" />
-                    <path class="region" data-name="Papua" d="M650,160 L780,160 L780,240 L650,240 Z" />
+                <svg viewBox="0 -50 1100 450" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-2xl">
+                    <path class="region" data-name="Sumatera" d="M124.2,143.2 L138.5,135.5 L178.2,185.7 L205.5,232.1 L182.2,254.3 L115.5,188.4 Z" />
+                    <path class="region" data-name="Kalimantan" d="M352.2,135.2 L455.5,135.2 L482.2,212.4 L335.2,212.4 Z" />
+                    <path class="region" data-name="Jawa" d="M245.5,285.2 L512.2,285.2 L512.2,305.4 L245.5,305.4 Z" />
+                    <path class="region" data-name="Sulawesi" d="M525.2,145.2 L612.2,145.2 L612.2,245.2 L525.2,245.2 L555.2,195.2 Z" />
+                    <path class="region" data-name="Nusa Tenggara" d="M532.2,305.4 L685.2,305.4 L685.2,318.2 L532.2,318.2 Z" />
+                    <path class="region" data-name="Maluku" d="M635.2,165.2 L685.2,165.2 L685.2,225.2 L635.2,225.2 Z" />
+                    <path class="region" data-name="Papua" d="M725.2,195.2 L885.2,195.2 L885.2,275.2 L725.2,275.2 Z" />
                 </svg>
             </div>
             <p class="mt-8 text-xs text-slate-400 italic">*Arahkan kursor ke wilayah peta</p>
@@ -458,23 +460,27 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // --- FITUR BARU: ANIMASI TOOLTIP PETA ---
         const mapTooltip = document.getElementById('map-tooltip');
         const regions = document.querySelectorAll('.region');
 
         regions.forEach(region => {
+            region.addEventListener('mouseenter', () => {
+                mapTooltip.style.opacity = '1';
+            });
+            
             region.addEventListener('mousemove', (e) => {
                 mapTooltip.innerText = region.getAttribute('data-name');
-                mapTooltip.style.opacity = '1';
-                mapTooltip.style.left = e.clientX + 10 + 'px';
-                mapTooltip.style.top = e.clientY + 10 + 'px';
+                // Mengatur posisi tooltip agar mengikuti kursor dengan offset
+                mapTooltip.style.left = (e.clientX + 15) + 'px';
+                mapTooltip.style.top = (e.clientY + 15) + 'px';
             });
+
             region.addEventListener('mouseleave', () => {
                 mapTooltip.style.opacity = '0';
             });
         });
 
-        // --- FITUR SCROLL REVEAL ---
+        // Script Scroll Reveal
         const reveals = document.querySelectorAll(".reveal");
         const revealOnScroll = () => {
             for (let i = 0; i < reveals.length; i++) {
@@ -489,6 +495,7 @@
         window.addEventListener("scroll", revealOnScroll);
         revealOnScroll(); // Jalankan sekali saat load
 
+        // Script Mobile Menu
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
